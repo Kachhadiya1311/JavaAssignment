@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignmnet-3</title>
+</head>
+<script>
+  /*   Coding Task 1
+
+Perform the following:
+Declare and initialize an array with 6 string values. Name this array: countries
+console.log each item in the array. (Note: For this, you have to use an array method called forEach.) */
+let countries = ["China", "India", "Canada", "Dubai", "USA", "Australia"];
+
+countries.forEach(function(country) {
+    document.writeln(country + "<br>");
+    document.writeln("<br>");
+    console.log(country);
+});
+/*
+Coding Task 2
+
+ Write a function named calculateNumberToothbrushForLife that:
+Takes 2 arguments: age, amountPerMonth
+Contains a local variable maxAge (Assign an age value you would like (i.e., 98))
+Estimates the total quantity used throughout the course of a person's life (based on the max age)
+Outputs the result to the console.log, like so: "You will need ## toothbrushes to last you until the age of X"
+Calls calculateNumberToothbrushForLife at least 2 times with different values */
+function calculateNumberToothbrushForLife(age, amountPerMonth) {
+    const maxAge = 98;
+    let totalToothbrushes = (maxAge - age) * amountPerMonth * 12;
+   
+console.log("you will need " + totalToothbrushes + " toothbrushes to last you until the age of " + maxAge);
+document.writeln("<br>");
+    document.writeln("you will need " + totalToothbrushes + " toothbrushes to last you until the age of " + maxAge);
+     document.writeln("<br>");
+}
+
+calculateNumberToothbrushForLife(15, 1);
+calculateNumberToothbrushForLife(25, 2);
+
+</script>
+<body>
+    
+</body>
+</html>

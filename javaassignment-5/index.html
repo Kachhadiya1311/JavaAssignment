@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 25px;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="todoInput" placeholder="Add a new item..." />
+    <button id="addButton" onclick="addItem()">Add</button>
+    <button id="clearButton" onclick="clearItems()">Clear</button>
+    <button id="sortButton" onclick="sortItems()">Sort</button>
+    <br><br>
+    <input type="text" id="deleteInput" placeholder="Item to delete..." />
+    <button id="deleteButton" onclick="deleteItem()">Delete</button>
+    
+    <ul id="todoList"></ul>
+
+    <script>
+        const todoInput = document.getElementById('todoInput');
+        const deleteInput = document.getElementById('deleteInput');
+        const todoList = document.getElementById('todoList');
+
+        const todos = [];
+
+        function addItem() {
+            const todoText = todoInput.value.trim();
+            if (todoText) {
+                todos.push(todoText);
+                updateTodoList();
+                todoInput.value = '';
+            }
+        }
+
+        function clearItems() {
+            if (todos.length === 0) {
+                alert('No items to clear!');
+            } else {
+                todos.length = 0;
+                updateTodoList();
+            }
+        }
+
+        function sortItems() {
+            if (todos.length === 0) {
+                alert('No items to sort!');
+            } else {
+                todos.sort();
+                updateTodoList();
+            }
+        }
+
+        function deleteItem() {
+            const itemToDelete = deleteInput.value.trim();
+            const index = todos.indexOf(itemToDelete);
+            if (todos.length === 0) {
+                alert('No items to delete!');
+            } else if (index === -1) {
+                alert('Item not found in the list!');
+            } else {
+                todos.splice(index, 1);
+                updateTodoList();
+            }
+            deleteInput.value = '';
+        }
+
+        function updateTodoList() {
+            todoList.innerHTML = ''; 
+            todos.forEach(todo => {
+                const li = document.createElement('li');
+                li.textContent = todo;
+                todoList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

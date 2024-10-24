@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Coding task 1On a single line, declare three variables with the given names and values: firstName = "Moe" lastName = "Adam" age = 52
+       let firstName = "Moe", lastName = "Adam", age = 52;
+       
+/*Coding Task 2 Do the following:
+Declare a variable, name it firstname, and assign it the value “Mike”
+Declare a variable, name it lastname, and assign it the value “Douglas”
+Declare a variable, name it fullname, and assign it the vaue of firstname + lastname
+Make sure fullname contains a space between the firstname and the lastname
+Display the results in an alert */
+
+let firstname = "Mike";
+let lastname = "Douglas";
+let fullname = firstname + " " + lastname;
+alert(fullname);
+/* Coding Task 3
+
+Create a function called addMe that accepts 1 argument x:
+This function will add the number to an external variable
+Name the external variable total and assign it a value of 0 (zero)
+Call the function three times with three distinct values
+Display the results however you wish */
+let total = 0;
+
+function addMe(x) {
+    total += x;
+}
+
+addMe(13);
+addMe(11);
+addMe(2003);
+
+
+console.log("Total  additions: " + total);
+
+document.writeln("Total additions: " + total);
+/* Coding Task 4
+
+You know how old your cat is in human years, but how old is your cat in cat years? You can create a calculation to figure that out!
+Create a function called calculateCatAge that takes one argument: the age of your cat
+Estimate your cat's age using a conversion rate of one human year to seven cat years
+The outcome should be displayed on the screen as follows: "Your cat is ## years old in cat years!"
+Call the function three times with three distinct values */
+function calculateCatAge(catAge) {
+    let catAgeInCatYears = catAge * 7;
+    alert("your cat is " + catAgeInCatYears + " years old in cat years!");
+}
+console.log(calculateCatAge(4));
+console.log(calculateCatAge(5));
+console.log(calculateCatAge(7));
+//document.writeln(calculateCatAge(4));
+//document.writeln(calculateCatAge(6));
+//document.writeln(calculateCatAge(8));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
